@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'minecraft_engine_cli'
+
+@cli = MinecraftEngineCLI.new
+
+puts @cli.start
