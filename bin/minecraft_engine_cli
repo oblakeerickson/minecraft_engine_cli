@@ -4,4 +4,14 @@ require 'minecraft_engine_cli'
 
 @cli = MinecraftEngineCLI.new
 
-puts @cli.start
+command = ARGV[0]
+if !command || command == ""
+  puts "Please provide a command"
+end
+
+case command
+when "ls"
+  @cli.list_servers
+else
+  puts "I haven't learned that command yet"
+end
