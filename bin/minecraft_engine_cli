@@ -12,6 +12,8 @@ end
 case command
 when "ls"
   @cli.list_servers
+when "backups"
+  @cli.list_backups
 else
   puts "I haven't learned that command yet"
 end

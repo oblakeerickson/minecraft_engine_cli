@@ -10,4 +10,5 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/oblakeerickson/minecraft_engine_cli'
   s.license = 'MIT'
   s.add_dependency 'droplet_kit', '~> 2.2'
+  s.add_dependency 'dropbox_api', '~> 0.1'
 end
