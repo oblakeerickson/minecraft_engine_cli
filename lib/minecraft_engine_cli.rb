@@ -35,4 +35,8 @@ class MinecraftEngineCLI
       end
     end
   end
+
+  def get_link(filename)
+    link = @dropbox_api.get_temporary_link(filename)
+  end
 end
