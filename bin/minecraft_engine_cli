@@ -11,7 +11,10 @@ end
 
 case command
 when "ls"
-  @cli.list_servers
+  servers = @cli.list_servers
+  servers.each do |s|
+    puts "id: #{s.id}, name: #{s.name}, ip: #{s.networks.v4[0].ip_address}"
+  end
 when "backups"
   @cli.list_backups
 else

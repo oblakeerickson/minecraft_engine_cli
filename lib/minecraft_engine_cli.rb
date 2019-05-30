@@ -14,10 +14,7 @@ class MinecraftEngineCLI
   end
 
   def list_servers
-    droplets = @droplet_kit.droplets.all(tag_name: 'minecraft')
-    droplets.each do |d|
-      puts "id: #{d.id}, name: #{d.name}, ip: #{d.networks.v4[0].ip_address}"
-    end
+    @droplet_kit.droplets.all(tag_name: 'minecraft')
   end
 
   def list_backups
