@@ -36,4 +36,31 @@ class MinecraftEngineCLI
   def get_link(filename)
     link = @dropbox_api.get_temporary_link(filename)
   end
+
+  private
+
+  def show(name)
+    server = ""
+    servers = list_servers
+    list = servers.split("\n")
+    list.each do |s|
+      if s.include?(name)
+        server = s
+      end
+    end
+    server
+  end
+
+  def property(property_string)
+    property_string.split(" ")[1]
+  end
+
+  def server_properties(server_string)
+    parts = server_string.split(",")
+    id = property(parts[0])
+    name = property(parts[1])
+    ip = property(parts[2])
+    {id: id, name: name, ip: ip}
+  end
+
 end
