@@ -10,13 +10,19 @@ if !command || command == ""
 end
 
 case command
-when "ls"
+when "list"
   servers = @cli.list_servers
   servers.each do |s|
     puts "id: #{s.id}, name: #{s.name}, ip: #{s.networks.v4[0].ip_address}"
   end
 when "backups"
-  @cli.list_backups
+  backups = @cli.list_backups
+  backups.each do |b|
+    puts b
+  end
+when "stop"
+  name = ARGV[1]
+  @cli.stop(name)
 else
   puts "I haven't learned that command yet"
 end
